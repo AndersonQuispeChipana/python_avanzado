@@ -55,3 +55,6 @@ def login(usuario="",password=""):
 login(password="12345678",usuario="tupapi")
 # esta funcion es una funcion nominal porque para pasar los valores tengo que indicar la variable a la que se le va asociar el parametro de la funcion
 ```
+```python
+
+```

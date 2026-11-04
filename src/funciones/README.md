@@ -58,3 +58,48 @@ login(password="12345678",usuario="tupapi")
 ```python
 
 ```
+## conocemos mas sobre funciones parametros y argumentos y argumentos
+sobre los parametros/argumentos nominales es ampliamente usado para distintos configuraciones ya que se puede pasar solo los argumentos que se usaran y dejar los parametros por defecto si no se va a modificar.
+```python
+# tenemos un programa que me permite acceder a internet que tiene parametros por defecto, sin embargo si se actualiza uno de los accesos se podra modificar el valor.
+## primer caso accesso por defecto
+def config(user="admin",pass="1234",port="8080",BSSID="wifi"):
+    return "conectado a la red"
+config()
+#segundo caso l BSSID cambia por el laboratorio1
+def config(user="admin",pass="1234",port="8080",BSSID="wifi"):
+    return "conectado a la red"
+config(BSSID="laboratorio1")
+## reyner desea conectarse al wifi de ana luz, pregunta como se llama tu wifi y cual es la contraseña. respuesta le dice el wifi es a56 y su contraseña es 12345678
+def config(user="admin",pass="1234",port="8080",BSSID="wifi"):
+    return "conectado a la red"
+config(BSSID="A56",pass="12345678")
+```
+
+### conociendo *args y **kargs (emmpaquetado y desempaquetado de argumentos pposicionales)
+### desempaquetando argumentos posicionales
+esta tecnica nos permite  empaquetar nuestros argumentos cuando mo sabemos la cantidad de datos que vamos a psar. imaginemos que nos piden una funcion para suma la cantidad de numeros la solucion seria empaquetar los argumentos y lluego desempaquetarlos para ello en la definicion de la funcion dentro de los parametros debemos usar el operador `*` delante del nombre del paramewtro posicional esto hara que todos los argumentos se almacenan en un tupla`()` (lista`[]`) esto nos permite rrecorrer dentro de sus elementos para poder desempaquetar y realizar las operaciones necesarias.
+```python
+# deseamos crear una funcion que nos permita sumar n cantidad de numeros
+#n es un numero variable puede ser 3,7,8......n
+def suma(*args):
+    #*args =(2,5,7,8,9)
+    for i in args:
+        acumulado += i
+    return acumulado
+print(suma(2,,5,7,8,9))
+```
+#### desempaquetando argumentos nominales
+en este caso como en elk anterior utilizaremos el operador `*` la casuistica es el mismo sain embargo para de4sempaquetar argumento nominalñes usaremos `**` delante del nombre del parametro nominal, diferencia del anterio esto se empaqueta en un diccionario (`{clave:valor}`)
+```python
+# debemos crear una funcion que me permita saber encontrar la persona con mayor calificacion.
+def mejor_alumno(**kwargs):
+    # **kwargs={clave:valor}
+    nota_maxima
+    for alumno,nota in kwargs.items():
+        if nota > nota_maxima:
+            nota_maxima = nota
+            mejor_alumno = alumno
+        return mejor_alumno
+mejor_alumno(noemi=20,eduardo=18,david=19)
+```

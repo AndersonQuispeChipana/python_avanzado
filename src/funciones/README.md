@@ -122,3 +122,7 @@ existen casos en os que necesitamos mas exprecividad en la *anotacion de tipos* 
 - list[int] -> lista de numeros enteros
 -dict[str,float] -> diccionario domnde las claves son cadenas de texto y los valores son flotantes/decimales
 -**multiples**
+ en el caso que queramoa indicar que un determinado parmetro puede ser de un `tipo o de otro` tenemos que espicificarlo usando el operador `|`
+ - tuple|dict -> puede ser datos de tipo tupla o diccionario
+ - list[srt|int] -> lista cuuyos elementos pueden ser cadenas de texto o enteros
+ - dict[srt|int,float|int] -> diccioanrio

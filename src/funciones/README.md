@@ -58,6 +58,7 @@ login(password="12345678",usuario="tupapi")
 ```python
 
 ```
+<<<<<<< HEAD
 ## conocemos mas sobre funciones parametros y argumentos y argumentos
 sobre los parametros/argumentos nominales es ampliamente usado para distintos configuraciones ya que se puede pasar solo los argumentos que se usaran y dejar los parametros por defecto si no se va a modificar.
 ```python
@@ -103,3 +104,73 @@ def mejor_alumno(**kwargs):
         return mejor_alumno
 mejor_alumno(noemi=20,eduardo=18,david=19)
 ```
+=======
+
+
+
+## funciones anonimas
+las funciones anonimas en python son llamadas `lamba`,estas funciones tiene las siguientes propiedades:
+1. se escribe en una unica sentencia`(linea)`
+2. no tiene nombre`(anonima)`
+3. su cuerpo conlleva un `return` implicito.
+4. puede recibir cualquier numero de parametros.
+
+la estructura para definir una funcion landa `lambda` es la siguiente:
+1. escribir la palabra reservada `lambda` 
+2. especificar la cantidad de parametros.
+3. indicar los datos de retorno
+```python
+lambda a,b: a+b
+```
+> [!TIP] puesto que esta funcion es anonima para ejecutarla debemos almacenar la funcion en una variable
+ ```python
+suma=lambda a,b: a+b
+suma(3,6)
+```
+## Documemntacion
+python nos permite documentar una funcion con el objetivo de explicar mejor determinadas zonas de nuestro codigo, para esto uzamos una cadena de texto despues de la difinicion de una funcion, a esta cadena de texrto se le conoce como `docstring` y esta delimitado por triples comillas `"""aqui el texto"""`
+```python
+def suma(a,b):
+    """
+    funcion para realizar la suma de dos numeros
+    """
+# los docstring tambien nos permite explixcvar los parametros que recibe los datos de salida
+def resta(a,b):
+    """
+    a= un numero entero.
+    b= un numero entero.
+    en ambos casos a,b deben recibir valores menores 0.
+    retronara un dato entero <int> positivo
+    """
+    return a-b
+```
+> [!WARNING] en el proceso de documentacion tener en cuenta de incluir a lop menos lo siguiente: 
+>1. breve explicacion sobre que hace la funcion  
+>2. especificaciones y caracteristicas de los parametros incluyendo sus tipos . 
+>3. restricciones de la funcion.  
+>4. el valor que retorna y sus caracteristicas
+
+## type-hints (anotaciones de tipo)
+nos permite indicar que tipo de datos recibiran una variable, parametro y el valor de retorno de una funcion.
+para utilizarlos debemos indicar el tipo de dato despues del separador`:`, en el caso del valor de retorno usaremos `->` luego el tipo de dato y finalmente el separador`:` que indica el inicio del bloque de codigo de la funcion.
+las `anotacines tipo` son una herramienta que nos perite complementar la documentacion de nuestro codigo
+**tenemos los siguientes**
+- **simple**
+- int -> numeros enteros
+- float -> decimales
+- bool -> datos boleanos (verdad o falso)
+- str -> datos de tipo texto o cadena
+- list -> listas `[]`
+- tuple -> tuplas `()`
+- dict -> diccionarios `{}`
+-**compouestos**
+existen casos en os que necesitamos mas exprecividad en la *anotacion de tipos*  ¿que ocurre si queremos indicar una *lista de cadenas* o un *conjunto de enteros*.?
+- list[str] -> lista de cadenas de texto
+- list[int] -> lista de numeros enteros
+-dict[str,float] -> diccionario domnde las claves son cadenas de texto y los valores son flotantes/decimales
+-**multiples**
+ en el caso que queramoa indicar que un determinado parmetro puede ser de un `tipo o de otro` tenemos que espicificarlo usando el operador `|`
+ - tuple|dict -> puede ser datos de tipo tupla o diccionario
+ - list[srt|int] -> lista cuuyos elementos pueden ser cadenas de texto o enteros
+ - dict[srt|int,float|int] -> diccioanrio
+>>>>>>> 1655b5d132d03e1769f9d5bee48ca3c85be6c680

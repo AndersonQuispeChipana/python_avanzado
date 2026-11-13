@@ -173,4 +173,15 @@ existen casos en os que necesitamos mas exprecividad en la *anotacion de tipos* 
  - tuple|dict -> puede ser datos de tipo tupla o diccionario
  - list[srt|int] -> lista cuuyos elementos pueden ser cadenas de texto o enteros
  - dict[srt|int,float|int] -> diccioanrio
+<<<<<<< HEAD
 >>>>>>> 1655b5d132d03e1769f9d5bee48ca3c85be6c680
+=======
+## closure
+una `closure` o `clausura` son funciones que establececn una funcion interioi, o retornan una funcion estas funciones se caracterizan por recrear el valor de los argumentos que se le pasa.
+```python
+def multiplicando(n):
+    def multiplicador(m):
+        return n*m
+    return multiplicador
+```
+>>>>>>> 59deaa67b31122c4edfc434058b01065702dd1b9

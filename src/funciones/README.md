@@ -172,16 +172,43 @@ existen casos en os que necesitamos mas exprecividad en la *anotacion de tipos* 
  en el caso que queramoa indicar que un determinado parmetro puede ser de un `tipo o de otro` tenemos que espicificarlo usando el operador `|`
  - tuple|dict -> puede ser datos de tipo tupla o diccionario
  - list[srt|int] -> lista cuuyos elementos pueden ser cadenas de texto o enteros
- - dict[srt|int,float|int] -> diccioanrio
-<<<<<<< HEAD
->>>>>>> 1655b5d132d03e1769f9d5bee48ca3c85be6c680
-=======
-## closure
-una `closure` o `clausura` son funciones que establececn una funcion interioi, o retornan una funcion estas funciones se caracterizan por recrear el valor de los argumentos que se le pasa.
+ - dict[srt|int,float|int] -> diccionario
+ 
+ closure
+una closure o clausura son funciones que establececn una funcion interioi, o retornan una funcion estas funciones se caracterizan por recrear el valor de los argumentos que se le pasa.
 ```python
 def multiplicando(n):
     def multiplicador(m):
         return n*m
     return multiplicador
 ```
->>>>>>> 59deaa67b31122c4edfc434058b01065702dd1b9
+## programacion funcional
+
+Python usa tres map(), filter(), reduce(), pero nosotros solo usaremos map() y filter().
+
+Estas funciones integradas de python sirven para procesar y transformar colecciones de datos(listas,diccionarios) de manera muy eficiente:
+
+> [!tip] Importante:
+> Las funciones map() y filter() reciben dos parámetros primero la funcion a ejecutar y segundo el iterable en que va actuar. La funcion que recibe como parametro puede ser normal (def) o puede ser anonima(lambda).
+
+### 1. map()
+map aplica una funcion especifica a cada un de los elementos de una coleccion(iterable) y devuelve un nuevo iterable con los resultados.
+```python
+# de una lista de numeros deseamos calcular la potencia de 2 de cada numero
+numero:list[int]=[2,4,6,7]
+def f(x):
+    return x**2
+## una ves creada pasamos la funcion como parametro
+map(f,numeros)
+## cuando deseamo trabajar ccon funciones anonimas usamos lambda dentro del parametro
+map(lambda x:x**2,numeros)
+```
+### 2. filter()
+filter pasa cada elemento de una coleccion por una funcion y solo se queda con aquellos elementos donde la funcion devuleva true(es decir filtra los datos segun una condicion)
+```python
+# imagina que tienes  una lista de numeros y solo quieres quedarte con los numeros pares.
+numeros:list[int]=[2,7,8,20,4,3,912,11,16,17]
+filter(lamb n:n %2==0,numeros)
+```
+> [!WARNING] Nta importante
+> tanto `map()` como `filter` no devuelven listas directamente,sino iteradores. esto es para ahorrar memoria(evaluacion perezoza p lazy evaluation). si quieres ver el resultado como una lista tradicional, siempre debes envolveren `list()`.
